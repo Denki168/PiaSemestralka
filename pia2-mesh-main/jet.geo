@@ -1,0 +1,23 @@
+// Gmsh project created on Tue Apr  6 09:40:34 2021
+Point(1) = {-0, -0, 0, 0.05};
+Point(2) = {1, -0, 0, 0.05};
+Point(3) = {1, 0.5, 0, 0.05};
+Point(4) = {0, 0.5, 0, 0.05};
+Point(5) = {0, 0.3, 0, 0.005};
+Point(6) = {0, 0.2, 0, 0.005};
+Line(1) = {6, 1};
+Line(2) = {1, 2};
+Line(3) = {2, 3};
+Line(4) = {3, 4};
+Line(5) = {4, 5};
+Line(6) = {5, 6};
+Point(7) = {-1.6, 1, 0, 0.005};
+Point(8) = {0.5, 0.25, 0, 0.005};
+Point(9) = {0.4, 0.25, 0, 0.005};
+Circle(7) = {8, 9, 8};
+Line Loop(8) = {6, 1, 2, 3, 4, 5};
+Line Loop(9) = {7};
+Plane Surface(10) = {8, 9};
+Physical Line(2) = {6};
+Physical Line(1) = {1, 2, 3, 4, 5, 7};
+Physical Surface(11) = {10};
